@@ -1,5 +1,5 @@
 from interface import *
-from PIL import Image
+from PIL import Image, ImageFilter
 
 WIDTH, HEIGHT = photo_label.geometry().width(), photo_label.geometry().height()
 
@@ -60,7 +60,13 @@ def make_black_white():
     photo_label.setPixmap(photo.scaled(WIDTH,HEIGHT,aspectRatioMode=Qt.KeepAspectRatio))
 
 def make_blur():
-    pass
+    abs_path_photo = os.path.join(workdir,name_photo)
+    with Image.open(abs_path_photo) as photo_obj:
+        photo_blur = photo_obj.filter(ImageFilter.GaussianBlur(10))
+        new_abs_path_photo = os.path.join(workdir, "Image", "BW_" + name_photo)
+        photo_blur.save(new_abs_path_photo)
+    photo.load(new_abs_path_photo)
+    photo_label.setPixmap(photo.scaled(WIDTH,HEIGHT,aspectRatioMode=Qt.KeepAspectRatio))
 
 blur.clicked.connect(make_blur)
 black_white.clicked.connect(make_black_white)
