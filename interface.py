@@ -1,18 +1,4 @@
-from PyQt5.QtWidgets import QPushButton,QListWidget,QLabel,QApplication, QWidget, QHBoxLayout, QVBoxLayout, QMessageBox, QFileDialog, QSlider, QInputDialog, QLineEdit
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPixmap
-import os
 
-
-app = QApplication([])
-
-window = QWidget()
-window.setFixedSize(750,600)
-window.setWindowTitle("Easy Editor")
-
-folder = QPushButton("Папка")
-photo_list = QListWidget()
-photo_label = QLabel("Тіпа фотка")
 right = QPushButton("Вправо")
 left = QPushButton("Вліво")
 mirror = QPushButton("Дзеркало")
@@ -37,7 +23,21 @@ panel_layout.addWidget(black_white, stretch=1)
 photo = QPixmap()
 
 main_layout = QVBoxLayout()
-main_layout.addWidget(folder, stretch=1)
+main_layout.addWidget(folder, strefrom PyQt5.QtWidgets import QPushButton,QListWidget,QLabel,QApplication, QWidget, QHBoxLayout, QVBoxLayout, QMessageBox, QFileDialog, QSlider, QInputDialog, QLineEdit
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QPixmap
+import os
+
+
+app = QApplication([])
+
+window = QWidget()
+window.setFixedSize(750,600)
+window.setWindowTitle("Easy Editor")
+
+folder = QPushButton("Папка")
+photo_list = QListWidget()
+photo_label = QLabel("Тіпа фотка")tch=1)
 main_layout.addWidget(photo_list, stretch=3)
 
 base2_layout = QVBoxLayout()
